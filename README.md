@@ -2,7 +2,7 @@
 
 A SQL Server training project that brings CRM and ERP sales data into a medallion architecture: raw files in **Bronze**, prepared data in **Silver**, and customer, product and sales views in a **Gold star schema**.
 
-Built together with [Thouseef](https://github.com/thousifva) during training. This repository presents my supplied project files, with new diagrams and documentation based on their actual contents.
+This repository presents the supplied project files, with new diagrams and documentation based on their actual contents.
 
 [Architecture](#data-architecture) · [Star schema](#data-model-star-schema) · [Setup](#setup-and-run-order) · [Data catalog](docs/data-catalog.md) · [Run guide](docs/run-guide.md)
 
@@ -83,7 +83,7 @@ This is a starter check, not a recorded result. No SQL Server execution or end-t
 
 ## Provenance and credits
 
-This was a team project from our training, built together with [Thouseef](https://github.com/thousifva). The underlying training project is [SQL Data Warehouse Project by Data with Baraa](https://github.com/DataWithBaraa/sql-data-warehouse-project). The six supplied CSVs match its fictional CRM/ERP sample data. The original course's MIT notice is retained in [LICENSE](LICENSE).
+This repository uses the supplied project files.  The underlying training project is [SQL Data Warehouse Project by Data with Baraa](https://github.com/DataWithBaraa/sql-data-warehouse-project). The six supplied CSVs match its fictional CRM/ERP sample data. The original course's MIT notice is retained in [LICENSE](LICENSE).
 
 This repository uses the project files I supplied, not additional scripts from another learner's repository. Its write-up and diagrams were prepared for this repository. The SQL logic and source records are kept intact; filenames are organized and text-file newline formatting may differ.
 
