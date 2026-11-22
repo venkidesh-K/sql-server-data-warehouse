@@ -1,6 +1,6 @@
 # Data catalog
 
-This catalog describes the six supplied raw CSVs and the three views defined in `scripts/gold/ddl_gold.sql`. It does not infer Silver transformations or SQL column types that were not supplied.
+This catalog describes the six supplied raw CSVs and the three views defined in `scripts/gold/ddl_gold.sql`. Silver table definitions and transformations now live in [scripts/silver/](../scripts/silver/); this catalog does not restate them.
 
 ## Source inventory
 
@@ -70,7 +70,7 @@ The CRM gender rule is reproduced from the supplied SQL. It does not independent
 
 Each output row is derived from a Silver sales record, subject to join matches. The supplied SQL does not aggregate sales and does not enforce uniqueness of the dimension join columns. Duplicate matches can multiply rows. Do not assume `order_number` alone is a unique row key.
 
-The Gold view exposes `sls_sales`; it does not calculate sales as quantity multiplied by price. Any such derivation or repair would belong to the missing Silver implementation.
+The Gold view exposes `sls_sales`; it does not calculate sales as quantity multiplied by price. Any such derivation or repair belongs to the Silver implementation in [scripts/silver/](../scripts/silver/).
 
 ## Modeling notes
 
