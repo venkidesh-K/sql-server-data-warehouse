@@ -14,10 +14,11 @@ A small project that takes sales data from two systems (CRM and ERP) and organiz
 
 - `datasets/`: the CSV files (CRM and ERP)
 - `scripts/bronze/`: loads the raw data
+- `scripts/silver/`: cleans and standardizes the data
 - `scripts/gold/`: creates the final views
 - `docs/`: diagrams and notes
 
-The database setup scripts and the Silver scripts are not included here.
+The database setup scripts are not included here.
 
 ## Tools
 
