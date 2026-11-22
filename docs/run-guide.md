@@ -6,7 +6,7 @@ This guide covers the files included in this repository and the setup they still
 
 Use a disposable development database and a SQL Server client that understands `GO` batches, such as SSMS. Select the intended database before executing any SQL.
 
-The repository does not include database initialization, schema creation, Bronze table DDL, Silver table DDL or Silver transformation procedures. Prepare those objects before running the supplied scripts. Do not use a production database or invent table types from CSV headers without reviewing the data.
+The repository does not include database initialization, schema creation or Bronze table DDL. Prepare those objects before running the supplied scripts. Do not use a production database or invent table types from CSV headers without reviewing the data.
 
 ## 1. Prepare the required relations
 
@@ -69,9 +69,9 @@ Read all messages and compare each Bronze table's row count with the [raw source
 
 ## 5. Prepare Silver
 
-Supply and run the missing Silver DDL and transformations. The Gold script assumes those relations already contain prepared data with matching keys and suitable column types. The raw CRM and ERP key formats are not identical.
+Run [ddl_silver.sql](../scripts/silver/ddl_silver.sql) to create the Silver tables and [proc_load_silver.sql](../scripts/silver/proc_load_silver.sql) to define the load procedure, then `EXEC silver.load_silver;`. The procedure cleans and loads the Bronze data, including the differing CRM and ERP key formats. Like the Bronze loader, it truncates each target before loading and prints errors instead of rethrowing them, so review the messages and row counts.
 
-No Silver procedure, cleansing test suite or transformation result is supplied in this snapshot. Do not skip Silver by simply renaming raw Bronze tables.
+The Gold script assumes the Silver relations contain prepared data with matching keys and suitable column types. No cleansing test suite or recorded transformation result is supplied. Do not skip Silver by simply renaming raw Bronze tables.
 
 ## 6. Create Gold
 
